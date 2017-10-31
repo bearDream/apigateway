@@ -6,7 +6,7 @@
 	<groupId>cn.beardream</groupId>
 	<artifactId>apigateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<name>apigateway</name>
 	<description>api gateway for app</description>
