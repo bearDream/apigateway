@@ -1,0 +1,39 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: ZUUL-PROXY
+  redis:
+    database: 0
+    host: 101.132.69.202
+    port: 6379
+    password: zc19961102
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://182.254.147.72:8260/eureka
+    registry-fetch-interval-seconds: 10
+feign:
+  okhttp:
+    enabled: true
+  hystrix:
+    enabled: true
+zuul:
+  host:
+    connect-timeout-millis: 5000
+  SendErrorFilter:
+    disabled: true
+  SendResponseFilter:
+    disabled: true
