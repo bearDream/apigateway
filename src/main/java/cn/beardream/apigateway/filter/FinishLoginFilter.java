@@ -1,6 +1,5 @@
 package cn.beardream.apigateway.filter;
 
-import cn.beardream.apigateway.remote.IUserServerRemote;
 import cn.beardream.apigateway.utils.TokenUtil;
 import cn.beardream.core_common.constant.SysConstant;
 import cn.beardream.core_common.model.ResponseBody;
