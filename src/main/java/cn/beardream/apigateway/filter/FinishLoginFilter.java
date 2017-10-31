@@ -8,9 +8,7 @@ import cn.beardream.core_common.model.User;
 import cn.beardream.core_common.utils.ResponseBodyUtil;
 import cn.beardream.core_common.utils.TextUtils;
 import com.alibaba.fastjson.JSON;
-import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-import javafx.util.Pair;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 /**
  * 2017/10/24
