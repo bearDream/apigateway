@@ -82,9 +82,11 @@
 			<url>http://nexus.chiprincess.cn/repository/maven-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
 
