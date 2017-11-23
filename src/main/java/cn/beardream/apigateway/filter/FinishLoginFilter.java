@@ -83,7 +83,7 @@ public class FinishLoginFilter extends SendResponseFilter {
                 return null;
             }
             logger.info("s-============>: {}", s);
-            errorResponse("登陆失败，" + userBody.getData(), context);
+            successResponse(userBody.getData().toString(), context);
         } catch (IOException e) {
             logger.error("zuul处理登陆出错:{}", e.getLocalizedMessage());
             errorResponse(e.getLocalizedMessage(), context);
@@ -107,6 +107,19 @@ public class FinishLoginFilter extends SendResponseFilter {
         context.setResponseStatusCode(200);
         HttpServletResponse response = context.getResponse();
         response.addHeader("Authrization", token);
+        return null;
+    }
+
+    /**
+     * 响应成功，但业务出错
+     * @param s
+     * @param context
+     * @return
+     */
+    private Object successResponse(String s, RequestContext context){
+        context.setSendZuulResponse(true);
+        context.setResponseBody(JSON.toJSONString(ResponseBodyUtil.success("登陆失败", s)));
+        context.setResponseStatusCode(200);
         return null;
     }
 

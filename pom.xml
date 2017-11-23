@@ -79,7 +79,7 @@
 		<repository>
 			<id>nexus-snapshot</id>
 			<name>nexus-snapshot</name>
-			<url>http://101.132.69.202:10000/repository/maven-snapshots/</url>
+			<url>http://nexus.chiprincess.cn/repository/maven-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -91,7 +91,7 @@
 		<repository>
 			<id>nexus-central</id>
 			<name>nexus-central</name>
-			<url>http://101.132.69.202:10000/repository/maven-central/</url>
+			<url>http://nexus.chiprincess.cn/repository/maven-central/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -105,7 +105,7 @@
 		<pluginRepository>
 			<id>nexus-snapshots</id>
 			<name>nexus-snapshots</name>
-			<url>http://101.132.69.202:10000/repository/maven-snapshots/</url>
+			<url>http://nexus.chiprincess.cn/repository/maven-snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -117,7 +117,7 @@
 		<pluginRepository>
 			<id>nexus-central</id>
 			<name>nexus-central</name>
-			<url>http://101.132.69.202:10000/repository/maven-central/</url>
+			<url>http://nexus.chiprincess.cn/repository/maven-central/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>

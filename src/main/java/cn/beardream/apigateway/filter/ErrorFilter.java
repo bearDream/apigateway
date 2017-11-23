@@ -18,7 +18,7 @@ import java.io.OutputStream;
 
 /**
  * 2017/10/31
- *
+ * 处理的是路由中的异常信息
  * @author chi.zhang
  * @email laxzhang@outlook.com
  */
@@ -51,8 +51,9 @@ public class ErrorFilter extends ZuulFilter {
             HttpServletResponse response = ctx.getResponse();
             response.setCharacterEncoding("UTF-8");
             response.setContentType("text/json;charset=UTF-8");
+            response.setStatus(HttpServletResponse.SC_SERVICE_UNAVAILABLE);
             OutputStream outStream = response.getOutputStream();
-            String error = JSON.toJSONString(ResponseBodyUtil.error("zuul路由出错,对应实例可能挂了..."));
+            String error = JSON.toJSONString(ResponseBodyUtil.error("zuul路由出现异常"));
             InputStream is = new ByteArrayInputStream(error.getBytes(response.getCharacterEncoding()));
             writeResponse(is,outStream);
         }catch (Exception e){

@@ -66,7 +66,7 @@ public class AccessFilter extends ZuulFilter {
         if (accessToken == null){
             unauthorized(context);
         }
-        // 通过user-server进行校验是否登陆, 若已登陆则刷新token并继续路由，否则返回401
+        // 通过token进行校验是否登陆, 若已登陆则刷新token并继续路由，否则返回401
         if (accessToken != null){
             TokenModel tokenModel = mTokenUtil.checkToken(accessToken);
             if (tokenModel == null) {
@@ -74,6 +74,8 @@ public class AccessFilter extends ZuulFilter {
                 return null;
             }
             mTokenUtil.refreshToken(accessToken);
+            // 添加token, 服务可以根据token获取用户信息
+            context.addZuulRequestHeader("zuul-token", tokenModel.getToken());
             context.setSendZuulResponse(true);
             context.setResponseStatusCode(200);
         }
